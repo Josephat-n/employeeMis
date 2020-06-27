@@ -2,6 +2,7 @@ from flask import render_template
 from . import main
 from .. import db
 from ..models import Employee
+from .forms import EmployeeForm
 
 
 @main.route('/')
@@ -12,3 +13,11 @@ def index():
    employees = Employee.query.all()
    print(employees)
    return render_template('index.html', employees = employees)
+
+@main.route('/add_employee')
+def addemp():
+   """
+   Add a new employee to the database
+   """
+   return render_template('addemp.html')
+   
