@@ -19,5 +19,6 @@ def addemp():
    """
    Add a new employee to the database
    """
-   return render_template('addemp.html')
+   form = EmployeeForm()
+   return render_template('addemp.html', addemp_form = form)
    

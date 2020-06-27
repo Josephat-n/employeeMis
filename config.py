@@ -1,7 +1,8 @@
 import os
 
 class Config:
-	pass
+   WTF_CSRF_ENABLED = True,
+   SECRET_KEY=os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):   
    pass
