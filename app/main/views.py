@@ -8,11 +8,10 @@ from .forms import EmployeeForm
 @main.route('/')
 def index():
    """
-   Fetch the employees and details from the bd.
+   This is the default landing page, containing the welcome message.
    """
-   employees = Employee.query.all()
-   print(employees)
-   return render_template('index.html', employees = employees)
+   
+   return render_template('index.html')
 
 @main.route('/add_employee', methods = ['GET','POST'])
 def addemp():
@@ -43,9 +42,11 @@ def addemp():
 @main.route('/view_reports')
 def reports():
    """
-   View employees report
+   View employees report. This includes fetching all the employees details from the bd.
    """
+   employees = Employee.query.all()
+   print(employees)
    
-   return render_template('report.html')
+   return render_template('report.html', employees = employees)
       
    

@@ -1,8 +1,21 @@
 {% extends 'base.html'%}
 
 {% block content %}
-
-<h1>View employees report</h1> 
+<div class="container">  
+    <div class="row">
+        <div class="col-md-6">
+            <h1>View employees report</h1>            
+        </div>
+        <div class="col-md-6">
+            <h3>All employees by first Name</h3> 
+            <ol>
+                {% for employee in employees %}
+                   <li>{{employee.name}}</li>
+                {% endfor %}
+            </ol> 
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
