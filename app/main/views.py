@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, flash
 from . import main
 from .. import db
 from ..models import Employee
@@ -34,7 +34,9 @@ def addemp():
       db.session.add(new_employee)
       db.session.commit()
       
+      flash('New Employee added')   
       return redirect(url_for('.addemp'))
+   
    
    return render_template('addemp.html', addemp_form = form)
    
