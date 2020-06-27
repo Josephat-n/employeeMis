@@ -5,6 +5,8 @@
 <div class="container">  
     <div class="row">
         <div class="col-md-6">
+            <h2>Create a new employee record</h2><hr>
+
             <!--Flash message -->
             {% for message in get_flashed_messages() %}
             <div class="alert alert-success">
@@ -13,7 +15,7 @@
             </div>
             {% endfor %}
             <!--End of Flash message block-->
-
+            
             {{ wtf.quick_form(addemp_form) }}
         </div>
     </div>

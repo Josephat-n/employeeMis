@@ -34,9 +34,18 @@ def addemp():
       db.session.add(new_employee)
       db.session.commit()
       
-      flash('New Employee added')   
+      flash('New Employee added successfully!')   
       return redirect(url_for('.addemp'))
    
    
    return render_template('addemp.html', addemp_form = form)
+
+@main.route('/view_reports')
+def reports():
+   """
+   View employees report
+   """
+   
+   return render_template('report.html')
+      
    
